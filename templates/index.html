@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="Styles.css">
+ <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+  </div>
+
+
+  <div class="container container-padding">
+
+    <div class="row">
+    <h2>Latest Mars News</h2>
+    </div>
+
+    <div class="row">
+        <h3>{{mars.title_splinter}}</h3>
+        <p> {{mars.paragraph_splinter}} </p>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-lg-8 col-sm-12">
+        <h2>Featured Mars Image</h3>
+          <img src="{{ mars.featured_image_url }}" alt="Featured Images" ALIGN="left" alt="Maximum Temperature" height="400" width="700">
+      </div>
+
+      <div class="col-lg-4 col-sm-12">
+          <div class="col-md-12">
+            <h3>Current Weather on Mars</h3>
+              <p> {{mars.mars_weather_tweet}} </p>
+          </div> 
+          <div class="col-md-12">
+            <h3>Mars Facts</h3>
+            {{mars.html_table | safe}}
+          </div>
+      </div> 
+
+    </div>
+
+  <hr>
+
+    <h2>Mars Hemispheres</h3>
+
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <h3>Cerberus Hemisphere</h3>
+          <img src="{{ mars.cerberus_img }}" alt="Cerberus Hemisphere" height="500" width="500">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <h3>Schiaparelli Hemisphere</h3>
+          <img src="{{ mars.schiaparelli_img }}" alt="Schiaparelli Hemisphere" height="500" width="500">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <h3>Syrtis Hemisphere</h3>
+          <img src="{{ mars.syrtis_img }}" alt="Syrtis Hemisphere" height="500" width="500">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <h3>Valles Hemisphere</h3>
+          <img src="{{ mars.valles_img }}" alt="Valles Hemisphere" height="500" width="500">
+        </div>
+      </div>
+
+</body>
+
+</html>
